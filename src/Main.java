@@ -24,8 +24,33 @@ public class Main {
         mentoria2.setDescricao("descrição mentoria javascript");
         mentoria2.setData(LocalDate.now());
 
+        Bootcamp bootcamp = new Bootcamp();
+        bootcamp.setNome("Bootcamp Java Developer");
+        bootcamp.setDescrição("Descrição Bootcamp Java Developer");
+        bootcamp.getConteudos().add(curso1);
+        bootcamp.getConteudos().add(curso2);
+        bootcamp.getConteudos().add(mentoria1);
 
-        System.out.println(curso1);
+        Dev dev1 = new Dev();
+        dev1.setNome("Vinicius");
+        dev1.increverBootcamp(bootcamp);
+        System.out.println("Conteúdos Incritos " +dev1.getNome() + dev1.getConteudosIscritos());
+        dev1.progredir();
+        System.out.println("Conteúdos Concluidos " +dev1.getNome() + dev1.getGetConteudosConcluidos());
+        System.out.println("XP:"+dev1.calcularTotalXp());
 
+
+        System.out.println("--------------------------");
+
+
+        Dev dev2 = new Dev();
+        dev2.setNome("João");
+        dev2.increverBootcamp(bootcamp);
+        System.out.println("Conteúdos Incritos " +dev2.getNome()+ dev2.getConteudosIscritos());
+        dev2.progredir();
+        dev2.progredir();
+        dev2.progredir();
+        System.out.println("Conteúdos Concluidos " +dev2.getNome()+ dev2.getGetConteudosConcluidos());
+        System.out.println("XP:"+dev2.calcularTotalXp());
     }
 }
